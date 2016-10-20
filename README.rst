@@ -28,4 +28,4 @@ Database Fields
 
 This package adds a new Field type that manages numpy arrays. This field is based on django ArrayField, that
 *only works with PostgreSQL backend*. The **NumpyArrayField** behave just like Django's ArrayField so all parameters
-defined in `official docs<https://docs.djangoproject.com/en/1.10/ref/contrib/postgres/fields/#arrayfield>`_.
+defined in `official docs <https://docs.djangoproject.com/en/1.10/ref/contrib/postgres/fields/#arrayfield>`_.
