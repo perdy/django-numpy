@@ -23,7 +23,7 @@ with open(os.path.join(BASE_DIR, 'README.rst'), encoding='utf-8') as f:
     _LONG_DESCRIPTION = f.read()
 
 _CLASSIFIERS = (
-    'Development DjangoNumpy :: 5 - Production/Stable',
+    'Development Status :: 5 - Production/Stable',
     'Framework :: Django',
     'Intended Audience :: Developers',
     'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
@@ -68,8 +68,4 @@ setup(
     zip_safe=False,
     keywords=_KEYWORDS,
     classifiers=_CLASSIFIERS,
-    cmdclass={
-        'gulp': Gulp,
-        'dist': Dist,
-    },
 )
