@@ -19,8 +19,6 @@ class NumpyArrayField(ArrayField):
 
     def deconstruct(self):
         name, path, args, kwargs = super(NumpyArrayField, self).deconstruct()
-        if path == 'django.contrib.postgres.fields.array.NumpyArrayField':
-            path = 'django.contrib.postgres.fields.NumpyArrayField'
         kwargs.update({
             'base_field': self.base_field,
             'size': self.size,

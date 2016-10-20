@@ -2,7 +2,7 @@
 Django Numpy
 ============
 
-:Version: 1.0.0
+:Version: 1.0.1
 :DjangoNumpy: Production/Stable
 :Author: José Antonio Perdiguero López
 
