@@ -1,25 +1,29 @@
-# -*- coding: utf-8 -*-
+  # -*- coding: utf-8 -*-
 
-import os
+from pathlib import Path
 import sys
 
-from pip.download import PipSession
-from pip.req import parse_requirements
+import pkg_resources
 from setuptools import setup
 
 import django_numpy
 
-BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+
+BASE_DIR = Path(__file__).parent
 
 if sys.version_info[0] == 2:
     from codecs import open
 
 # Read requirements
-_requirements_file = os.path.join(BASE_DIR, 'requirements.txt')
-_REQUIRES = [str(r.req) for r in parse_requirements(_requirements_file, session=PipSession())]
+with (BASE_DIR / "requirements.txt").open() as requirements_txt:
+    _REQUIRES = [
+        str(requirement)
+        for requirement
+        in pkg_resources.parse_requirements(requirements_txt)
+    ]
 
 # Read description
-with open(os.path.join(BASE_DIR, 'README.rst'), encoding='utf-8') as f:
+with open(BASE_DIR / "README.rst", encoding='utf-8') as f:
     _LONG_DESCRIPTION = f.read()
 
 _CLASSIFIERS = (
